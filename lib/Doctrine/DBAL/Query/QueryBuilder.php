@@ -58,7 +58,7 @@ class QueryBuilder
      *
      * @var \Doctrine\DBAL\Connection
      */
-    private $connection;
+    protected $connection;
 
     /**
      * @var array The array of SQL parts collected.
