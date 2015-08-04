@@ -148,7 +148,7 @@ class QueryBuilder
     public function __sleep() {
         unset($this->connection);
         // __sleep requires that you return an array of properties to serialize
-        return get_object_vars($this);
+        return array_keys(get_object_vars($this));
     }
 
     /**
