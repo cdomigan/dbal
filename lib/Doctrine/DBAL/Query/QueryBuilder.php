@@ -140,6 +140,16 @@ class QueryBuilder
     {
         $this->connection = $connection;
     }
+    
+    public function setConnection(Connection $connection) {
+        $this->connection = $connection;
+    }
+    
+    public function __sleep() {
+        unset($this->connection);
+        // __sleep requires that you return an array of properties to serialize
+        return get_object_vars($this);
+    }
 
     /**
      * Gets an ExpressionBuilder used for object-oriented construction of query expressions.
