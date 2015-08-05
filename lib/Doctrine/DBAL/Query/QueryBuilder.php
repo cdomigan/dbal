@@ -1072,6 +1072,12 @@ class QueryBuilder
     {
         return $this->sqlParts;
     }
+    
+    public function setQueryPart($queryPartName, $data) {
+        $this->sqlParts[$queryPartName] = $data;
+        $this->state = self::STATE_DIRTY;
+        return $this;
+    }
 
     /**
      * Resets SQL parts.
